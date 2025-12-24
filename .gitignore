@@ -3,8 +3,9 @@
 build/
 !gradle/wrapper/gradle-wrapper.jar
 
-# Kotlin
+# Kotlin - but keep wrapper jar
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar
 *.ear
@@ -27,6 +28,16 @@ Thumbs.db
 *.log
 logs/
 
-# Application
-application.properties
-application-dev.yml
+# Application - IMPORTANT: Consider carefully
+# Usually you want to KEEP these with placeholder values
+# application.properties
+# application-dev.yml
+
+# Instead, ignore local overrides:
+application-local.yml
+application-local.properties
+*.local.*
+
+# Gradle wrapper (alternative approach)
+gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/
